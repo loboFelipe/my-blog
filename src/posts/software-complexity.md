@@ -6,7 +6,7 @@ categories:
   - software
   - complexity
   - javascript
-published: true
+published: false
 thumbnail: /posts/coding-standards.jpeg
 ---
 

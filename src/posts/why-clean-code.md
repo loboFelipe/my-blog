@@ -7,7 +7,7 @@ categories:
   - clean code
   - software development
   - javascript
-published: true
+published: false
 thumbnail: /posts/coding-standards.jpeg
 ---
 
