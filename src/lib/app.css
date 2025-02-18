@@ -1,0 +1,131 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-jersey: 'Jersey 10', serif;
+	--font-old-standard: 'Old Standard TT', serif;
+	--color-beige-500: oklch(0.96 0.0143 69.28);
+	--color-mint-500: oklch(0.72 0.11 178);
+	--color-base-theme: rgba(88, 80, 75, 1);
+	--color-active-theme: rgba(220, 211, 203, 1);
+	--drop-shadow-theme: 15px 15px 0px rgba(88, 80, 75, 1);
+	--shadow-active-theme: 7.5px 7.5px 0px rgba(220, 211, 203, 1);
+	--shadow-base-theme: 7.5px 7.5px 0px rgba(88, 80, 75, 1);
+	--animate-waving: waving 2s linear infinite;
+
+	@keyframes waving {
+		0% {
+			transform: rotate(0deg);
+		}
+		10% {
+			transform: rotate(14deg);
+		}
+		20% {
+			transform: rotate(-8deg);
+		}
+		30% {
+			transform: rotate(14deg);
+		}
+		40% {
+			transform: rotate(-4deg);
+		}
+		50% {
+			transform: rotate(10deg);
+		}
+		60% {
+			transform: rotate(0deg);
+		}
+		100% {
+			transform: rotate(0deg);
+		}
+	}
+}
+
+@layer base {
+	h1 {
+		@apply font-jersey text-4xl;
+	}
+	h2 {
+		@apply font-jersey text-3xl;
+	}
+	h3 {
+		@apply font-jersey text-2xl;
+	}
+	h4 {
+		@apply font-jersey text-xl;
+	}
+	h5 {
+		@apply font-jersey text-lg;
+	}
+	h6 {
+		@apply font-jersey text-base;
+	}
+	a {
+		@apply font-jersey;
+	}
+	body {
+		@apply font-old-standard bg-beige-500 text-stone-900;
+	}
+
+	pre {
+		@apply p-6 text-sm overflow-x-auto my-2;
+	}
+
+	code:not(pre > *) {
+		@apply font-semibold italic text-xs bg-[#101010] px-2 py-1 text-stone-200;
+	}
+
+	.prose h1 {
+		@apply py-3;
+	}
+	.prose h2 {
+		@apply py-3;
+	}
+	.prose h3 {
+		@apply py-2;
+	}
+	.prose h4 {
+		@apply py-2;
+	}
+	.prose h5 {
+		@apply py-1;
+	}
+	.prose h6 {
+		@apply py-1;
+	}
+
+	.prose hr {
+		@apply my-8;
+	}
+
+	.prose a {
+		@apply underline;
+	}
+
+	.prose table {
+		@apply table-auto w-full text-left;
+	}
+	
+	.prose table th {
+		@apply font-bold text-gray-600 p-2;
+	}
+	
+	.prose table td {
+		@apply py-2 px-4;
+	}
+	
+	.prose table tr {
+		@apply border-b border-active-theme;
+	}
+	
+	.prose table tr:last-child {
+		@apply border-b-0;
+	}
+}
+
+.clickable {
+	@apply transition-all duration-300 ease-in-out hover:bg-base-theme hover:shadow-active-theme hover:border-active-theme flex max-w-xl flex-col items-start justify-between border-3 border-base-theme shadow-base-theme bg-beige-500;
+}
+
+.clickable-active {
+	@apply bg-base-theme shadow-active-theme text-active-theme border-active-theme transition-all duration-300 ease-in-out hover:bg-base-theme hover:shadow-active-theme hover:border-active-theme flex max-w-xl flex-col items-start justify-between border-3;
+}
